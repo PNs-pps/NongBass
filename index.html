@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="ร้านน้ำชง & กาแฟสด — เมนูโซดา นม น้ำจืด ปั่น และกาแฟสด สั่งออนไลน์ได้เลย" />
+  <title>🌻 ร้านน้ำชง & กาแฟสด</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="#" class="logo">🌻 ร้านน้ำชง &amp; กาแฟสด</a>
+      <nav class="nav">
+        <a href="#menu">เมนู</a>
+        <a href="#reviews">รีวิว</a>
+        <a href="#" id="navTrack">ติดตามออเดอร์</a>
+        <button type="button" class="nav-pay" id="navPay">ชำระเงิน</button>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero">
+    <span class="hero-decor d1">🧊</span>
+    <span class="hero-decor d2">🥤</span>
+    <span class="hero-decor d3">☕</span>
+    <span class="hero-decor d4">🍓</span>
+    <div class="container hero-inner">
+      <span class="hero-badge">🙏 เปิดแล้วค่ะ ยินดีให้บริการ 🫶</span>
+      <h1>🌻 ร้านน้ำชง &amp; กาแฟสด</h1>
+      <p class="hero-sub">น้ำสด · กาแฟสด · เมนูเย็น ๆ สำหรับทุกวัน</p>
+      <a href="#menu" class="btn btn-primary">🍹 ดูเมนูของเรา</a>
+    </div>
+  </section>
+
+  <main id="menu">
+    <section class="menu-section">
+      <div class="container">
+        <h2 class="section-title">🍹 เมนูของเรา</h2>
+        <p class="section-sub">เลือกหมวดหมู่ที่ต้องการ แล้วกด "สั่งสินค้า"</p>
+        <div class="tabs-wrap">
+          <div class="tabs" id="menuTabs"></div>
+        </div>
+        <div class="menu-grid" id="menuGrid"></div>
+      </div>
+    </section>
+  </main>
+
+  <section id="reviews" class="reviews">
+    <div class="container">
+      <h2 class="section-title">⭐ รีวิวจากลูกค้า</h2>
+      <p class="section-sub">เสียงจากคนที่แวะมาดื่มกับเรา</p>
+      <div class="reviews-grid">
+        <article class="review-card">
+          <div class="stars">⭐⭐⭐⭐⭐</div>
+          <p class="review-text">"พีชโซดาหอมสดชื่นมาก หวานกำลังดี สั่งทุกครั้งที่มา"</p>
+          <p class="review-author">— คุณแนน</p>
+        </article>
+        <article class="review-card">
+          <div class="stars">⭐⭐⭐⭐⭐</div>
+          <p class="review-text">"ชาไทยปั่นเนื้อเนียน กาแฟสดก็หอม ราคาเป็นมิตร พนักงานน่ารัก"</p>
+          <p class="review-author">— คุณต้น</p>
+        </article>
+        <article class="review-card">
+          <div class="stars">⭐⭐⭐⭐⭐</div>
+          <p class="review-text">"สั่งผ่านเว็บง่ายมาก เลือกความหวานได้ตามใจ แถมจัดส่งไว"</p>
+          <p class="review-author">— คุณมิ้น</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="visit" class="visit">
+    <div class="container">
+      <h2 class="section-title">📍 เวลาทำการ &amp; ที่ตั้ง</h2>
+      <p class="section-sub">แวะมารับที่ร้าน หรือสั่งจัดส่งก็ได้</p>
+      <div class="visit-grid">
+        <div class="visit-card">
+          <div class="visit-icon">🕖</div>
+          <h3>เวลาทำการ</h3>
+          <p>เปิดทุกวัน<br /><strong>07:00 – 20:00 น.</strong></p>
+        </div>
+        <div class="visit-card">
+          <div class="visit-icon">📍</div>
+          <h3>ที่ตั้งร้าน</h3>
+          <p>ร้านน้ำชง &amp; กาแฟสด<br />โปรดระบุที่อยู่ร้านจริงภายหลัง</p>
+        </div>
+        <div class="visit-card map-card">
+          <div class="map-placeholder">🗺️<span>แผนที่ร้าน<br />(ใส่ Google Maps ภายหลัง)</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p class="footer-brand">🌻 ร้านน้ำชง &amp; กาแฟสด 🌻</p>
+      <p class="footer-tag">🙏 เปิดแล้วค่ะ ยินดีให้บริการ 🫶</p>
+      <a href="admin.html" class="seller-link">🔐 สำหรับผู้ขาย</a>
+    </div>
+  </footer>
+
+  <!-- ปุ่มตะกร้าลอย -->
+  <button type="button" class="cart-fab" id="cartFab">
+    🛒 <span>ตะกร้า</span>
+    <span class="cart-count hidden" id="cartCount">0</span>
+  </button>
+
+  <!-- Toast -->
+  <div class="toast" id="toast" role="status"></div>
+
+  <!-- ป๊อปอัพ: รายละเอียดสินค้า + ตัวเลือก -->
+  <div class="modal-overlay" id="orderModal" aria-hidden="true">
+    <div class="modal order-modal" role="dialog" aria-modal="true" aria-labelledby="orderModalTitle">
+      <button type="button" class="modal-close" id="modalClose" aria-label="ปิด">&times;</button>
+      <div class="modal-visual" id="modalVisual">
+        <span id="modalEmoji" class="menu-emoji floaty">🥤</span>
+        <span class="garnish" id="modalGarnish">🍓</span>
+        <span class="bubble b1"></span><span class="bubble b2"></span><span class="bubble b3"></span>
+      </div>
+      <h3 id="orderModalTitle"></h3>
+      <p class="modal-price" id="modalPrice"></p>
+      <p class="modal-desc" id="modalDesc"></p>
+
+      <div class="option-block">
+        <p class="option-title">ความหวาน</p>
+        <div class="sweetness-options" id="sweetnessOptions">
+          <button type="button" class="sweetness-btn" data-sweet="25">25%</button>
+          <button type="button" class="sweetness-btn" data-sweet="50">50%</button>
+          <button type="button" class="sweetness-btn" data-sweet="75">75%</button>
+          <button type="button" class="sweetness-btn" data-sweet="100">100%</button>
+          <button type="button" class="sweetness-btn" data-sweet="custom">อื่น ๆ</button>
+        </div>
+        <input type="number" id="customSweet" class="custom-sweet hidden" min="0" max="200" placeholder="ระบุความหวาน % (เช่น 60)" />
+      </div>
+
+      <div class="option-block">
+        <p class="option-title">จำนวน</p>
+        <div class="qty-control">
+          <button type="button" id="qtyMinus" aria-label="ลดจำนวน">−</button>
+          <span id="qtyValue">1</span>
+          <button type="button" id="qtyPlus" aria-label="เพิ่มจำนวน">+</button>
+        </div>
+      </div>
+
+      <button type="button" class="btn btn-primary btn-block" id="addToCartBtn">เพิ่มลงตะกร้า</button>
+    </div>
+  </div>
+
+  <!-- ป๊อปอัพ: ตะกร้า (ขั้นตอนที่ 1) → ชำระเงิน (ขั้นตอนที่ 2) -->
+  <div class="modal-overlay" id="cartModal" aria-hidden="true">
+    <div class="modal cart-modal" role="dialog" aria-modal="true">
+      <button type="button" class="modal-close" id="cartClose" aria-label="ปิด">&times;</button>
+
+      <!-- ขั้นตอนที่ 1: ตะกร้า -->
+      <div id="cartStep">
+        <h3>🛒 ตะกร้าสินค้า</h3>
+        <div class="cart-items" id="cartItems"></div>
+        <div class="cart-summary" id="cartSummary">
+          <div class="summary-row"><span>จำนวนสินค้า</span><span id="cartQty">0 ชิ้น</span></div>
+          <div class="summary-row total"><span>ยอดรวม</span><span id="cartTotal">0 บาท</span></div>
+        </div>
+        <div class="step-actions" id="cartActions">
+          <button type="button" class="btn btn-primary btn-block" id="toCheckout">ดำเนินการต่อ →</button>
+        </div>
+      </div>
+
+      <!-- ขั้นตอนที่ 2: สรุปคำสั่ง + ชำระเงิน -->
+      <div id="checkoutStep" class="hidden">
+        <h3>📝 ข้อมูลการสั่งซื้อ</h3>
+        <div class="order-review" id="orderReview"></div>
+        <form id="checkoutForm" class="checkout-form">
+          <div class="form-row">
+            <div class="form-group">
+              <label for="coName">ชื่อผู้สั่ง</label>
+              <input id="coName" type="text" placeholder="ชื่อ-สกุล" required />
+            </div>
+            <div class="form-group">
+              <label for="coPhone">เบอร์โทร</label>
+              <input id="coPhone" type="tel" placeholder="08x xxxxxx" required />
+            </div>
+          </div>
+          <div class="form-group">
+            <label>รูปแบบการรับสินค้า</label>
+            <div class="pay-options">
+              <label class="pay-option">
+                <input type="radio" name="fulfillment" value="pickup" checked />
+                <span class="pay-icon">🏠</span>
+                <span class="pay-text"><strong>รับหน้าร้าน</strong><small>มารับเองที่ร้าน</small></span>
+              </label>
+              <label class="pay-option">
+                <input type="radio" name="fulfillment" value="delivery" />
+                <span class="pay-icon">🛵</span>
+                <span class="pay-text"><strong>จัดส่ง</strong><small>ส่งถึงบ้าน</small></span>
+              </label>
+            </div>
+          </div>
+          <div class="form-group hidden" id="addressGroup">
+            <label for="coAddress">ที่อยู่จัดส่ง</label>
+            <textarea id="coAddress" rows="2" placeholder="บ้านเลขที่ / ถนน / แขวง / เขต ..."></textarea>
+            <div class="map-tools">
+              <button type="button" class="btn btn-ghost btn-sm" id="previewMapBtn">📍 ดูตำแหน่งบนแผนที่</button>
+              <a class="btn btn-ghost btn-sm" id="openMapLink" href="https://www.google.com/maps" target="_blank" rel="noopener">↗ เปิด Google Maps</a>
+            </div>
+            <div class="map-preview hidden" id="mapPreview">
+              <iframe id="mapFrame" title="แผนที่จัดส่ง" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+            <div class="map-link-wrap">
+              <label for="coMapLink">ลิงก์ตำแหน่ง Google Maps <small>(ถ้ามี)</small></label>
+              <input id="coMapLink" type="url" placeholder="วางลิงก์แชร์ตำแหน่งจากแอป Google Maps" />
+            </div>
+          </div>
+          <div class="form-group">
+            <label>วิธีการชำระเงิน</label>
+            <div class="pay-options">
+              <label class="pay-option">
+                <input type="radio" name="payment" value="transfer" checked />
+                <span class="pay-icon">🏦</span>
+                <span class="pay-text"><strong>โอนเงิน</strong><small>สแกน QR Code</small></span>
+              </label>
+              <label class="pay-option">
+                <input type="radio" name="payment" value="cash" />
+                <span class="pay-icon">💵</span>
+                <span class="pay-text"><strong>เงินสด</strong><small>จ่ายหน้าร้าน</small></span>
+              </label>
+            </div>
+          </div>
+          <div class="qr-box" id="qrBox">
+            <div class="qr-placeholder"><span>QR Code</span><small>เว้นว่างไว้ก่อน</small></div>
+            <p>สแกนเพื่อชำระเงิน</p>
+          </div>
+          <div class="step-actions">
+            <button type="button" class="btn btn-ghost" id="backToCart">← กลับไปตะกร้า</button>
+            <button type="submit" class="btn btn-primary">ยืนยันสั่งซื้อ</button>
+          </div>
+        </form>
+      </div>
+
+      <!-- ขั้นตอนที่ 3: สำเร็จ -->
+      <div class="modal-success hidden" id="checkoutSuccess">
+        <div class="success-icon">✅</div>
+        <h3>สั่งซื้อสำเร็จ!</h3>
+        <p id="checkoutSuccessText"></p>
+        <div class="step-actions">
+          <button type="button" class="btn btn-primary" id="trackFromSuccess">📦 ติดตามสถานะ</button>
+          <button type="button" class="btn btn-ghost" id="checkoutDone">ปิด</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ป๊อปอัพ: ติดตามสถานะคำสั่งซื้อ -->
+  <div class="modal-overlay" id="trackModal" aria-hidden="true">
+    <div class="modal track-modal" role="dialog" aria-modal="true" aria-labelledby="trackTitle">
+      <button type="button" class="modal-close" id="trackClose" aria-label="ปิด">&times;</button>
+      <h3 id="trackTitle">📦 ติดตามคำสั่งซื้อ</h3>
+      <p class="muted">กรอกเลขที่คำสั่งซื้อและเบอร์โทรที่ใช้สั่ง</p>
+      <form id="trackForm" class="track-form">
+        <div class="track-row">
+          <label for="trackId">เลขที่คำสั่งซื้อ</label>
+          <input id="trackId" type="text" placeholder="เช่น WS123456" autocomplete="off" />
+        </div>
+        <div class="track-row">
+          <label for="trackPhone">เบอร์โทร</label>
+          <input id="trackPhone" type="tel" placeholder="0812345678" autocomplete="off" />
+        </div>
+        <button type="submit" class="btn btn-primary btn-block">ตรวจสอบสถานะ</button>
+      </form>
+      <p class="track-error hidden" id="trackError">ไม่พบคำสั่งซื้อ หรือเบอร์โทรไม่ตรงกัน</p>
+      <div class="track-result hidden" id="trackResult"></div>
+    </div>
+  </div>
+
+  <script src="menu-data.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

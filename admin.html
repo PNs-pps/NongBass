@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ระบบผู้ขาย — ร้านน้ำชง &amp; กาแฟสด</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="admin.css" />
+</head>
+<body class="admin-body">
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="index.html" class="logo">🌻 ร้านน้ำชง &amp; กาแฟสด</a>
+      <nav class="nav">
+        <a href="index.html">กลับหน้าร้าน</a>
+        <button type="button" class="nav-pay" id="logoutBtn">ออกจากระบบ</button>
+      </nav>
+    </div>
+  </header>
+
+  <div class="admin-wrap container">
+    <div class="admin-head">
+      <h1>🧑‍🍳 ระบบผู้ขาย</h1>
+      <p>จัดการคำสั่งซื้อที่ลูกค้าสั่งเข้ามา และกำหนดเมนูที่เปิดขาย</p>
+    </div>
+
+    <div class="admin-tabs">
+      <button type="button" class="admin-tab active" data-tab="orders">📋 คำสั่งซื้อ</button>
+      <button type="button" class="admin-tab" data-tab="menus">🍹 จัดการเมนู</button>
+    </div>
+
+    <section id="ordersPanel">
+      <div class="stats">
+        <div class="stat-card"><span>ออเดอร์ทั้งหมด</span><strong id="statTotal">0</strong></div>
+        <div class="stat-card"><span>รอดำเนินการ</span><strong id="statNew">0</strong></div>
+        <div class="stat-card"><span>ยอดขายรวม</span><strong id="statRevenue">0 ฿</strong></div>
+      </div>
+
+      <div class="daily-summary">
+        <div class="daily-head">
+          <h2>📊 สรุปการขายรายวัน</h2>
+          <div class="daily-controls">
+            <button type="button" class="chip active" id="dayToday">วันนี้</button>
+            <button type="button" class="chip" id="dayYesterday">เมื่อวาน</button>
+            <input type="date" id="summaryDate" />
+          </div>
+        </div>
+        <div class="daily-grid" id="dailyGrid"></div>
+        <div class="daily-top" id="dailyTop"></div>
+      </div>
+
+      <div class="order-filters" id="orderFilters">
+        <button type="button" class="chip active" data-filter="all">ทั้งหมด</button>
+        <button type="button" class="chip" data-filter="new">ใหม่</button>
+        <button type="button" class="chip" data-filter="preparing">กำลังทำ</button>
+        <button type="button" class="chip" data-filter="done">เสร็จสิ้น</button>
+        <button type="button" class="chip" data-filter="cancelled">ยกเลิก</button>
+      </div>
+
+      <div id="orderList" class="order-list"></div>
+    </section>
+
+    <section id="menusPanel" class="hidden">
+      <p class="admin-note">เปิด/ปิดเมนู — เมนูที่ปิดจะไม่แสดงให้ลูกค้าเห็นในหน้าร้านทันที</p>
+      <div id="menuAdmin" class="menu-admin"></div>
+    </section>
+  </div>
+
+  <!-- PIN gate -->
+  <div class="modal-overlay" id="pinGate">
+    <div class="modal pin-modal" role="dialog" aria-modal="true">
+      <h3>🔐 เข้าสู่ระบบผู้ขาย</h3>
+      <p class="pin-note">กรอก PIN เพื่อจัดการร้าน (PIN เริ่มต้น: 1234)</p>
+      <form id="pinForm">
+        <input id="pinInput" type="password" inputmode="numeric" placeholder="กรอก PIN" autocomplete="off" />
+        <button type="submit" class="btn btn-primary btn-block">เข้าสู่ระบบ</button>
+      </form>
+      <p class="pin-error hidden" id="pinError">PIN ไม่ถูกต้อง ลองอีกครั้ง</p>
+    </div>
+  </div>
+
+  <script src="menu-data.js"></script>
+  <script src="admin.js"></script>
+</body>
+</html>
